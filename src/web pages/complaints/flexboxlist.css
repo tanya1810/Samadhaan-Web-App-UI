@@ -1,0 +1,35 @@
+.column3 {
+    text-align: center;
+    border-color: black;
+    padding-top: 50px;
+    font-family: "Krona One", sans-serif;
+  }
+  @media only screen and (min-width: 876px) {
+    .flexlist {
+      margin-left: 250px;
+    }
+  }
+  @media only screen and (max-width: 876px) {
+    .flexlist {
+      padding: 0px;
+      margin-top: 60px;
+    }
+  }
+  
+  @media only screen and (max-width: 876px) {
+    .column3 {
+      display: flex;
+      width: 80%;
+      justify-content: space-between;
+      margin-bottom: 10vh;
+      margin: auto;
+    }
+  }
+  
+  .fa {
+    height: 20px;
+  }
+  
+  .fa-cog {
+    margin-left: 0px;
+  }
