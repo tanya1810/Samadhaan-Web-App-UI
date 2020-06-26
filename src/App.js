@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import landingpg from './web pages/landingpg';
 import mainpg from './web pages/main';
 import login from './web pages/loginpg';
