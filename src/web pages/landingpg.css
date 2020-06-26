@@ -1,0 +1,29 @@
+#lol{
+	margin: auto;
+	width: 30%; 
+  border: 2px solid;
+  padding: 10px;
+  box-shadow: 5px 10px #888888;
+}
+#bu{
+  text-align: center; 
+  padding-top: 5%;
+	padding-bottom: 5%;
+}
+#le{
+	font-weight: bold; 
+	font-size: 40px;
+	text-align: center;
+	padding-top: 5% ;
+}
+span{
+	color: grey;
+}
+
+.lead{
+	font-size: 20px;
+	text-align: center;
+}
+#im{
+	text-align: center;
+}
