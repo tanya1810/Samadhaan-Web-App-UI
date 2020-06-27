@@ -39,8 +39,14 @@ const Mainpg = () => {
         </button>
       </div>
       <div id="lo">
-        <button type="button" className="btn btn-outline-dark btn-md" onClick={firebaseLogout}>
-           LOGOUT
+        <button
+          type="button"
+          className="btn btn-outline-dark btn-md"
+          onClick={() => {
+            firebaseLogout();
+          }}
+        >
+          LOGOUT
         </button>
       </div>
     </div>

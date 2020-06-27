@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import "./loginpg.css";
 import { Link } from "react-router-dom";
 import { firebaseLogin } from "../Fire/Auth";
+import { myFirebase } from "../firebase";
 
 const Loginpg = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const onSubmitHandler = () => {
+  const onSubmitHandler = event =>{
     firebaseLogin(username, password);
-  };
+    event.preventDefault()
+  }
 
   return (
     <div className="wrapper fadeInDown">

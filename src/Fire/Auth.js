@@ -10,26 +10,23 @@ export const firebaseAuthStateListener = () => {
   });
 };
 
-export const firebaseLogin = (username, password) => {
-  myFirebase
+export const firebaseLogin = async (username, password) => {
+   await myFirebase
     .auth()
-    .signInWithEmailAndPassword(username, password)
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage);
-      // ...
-    });
+    .signInWithEmailAndPassword(username.toString(), password.toString());
+    // .catch(function (error) {
+    //   // Handle Errors here.
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   console.log(errorMessage);
+    //   // ...
+    // });
 };
 
-export const firebaseLogout = () => {
-  myFirebase
+export const firebaseLogout = async () => {
+  await myFirebase
     .auth()
     .signOut()
-    .then(function () {
-      // Sign-out successful.
-    })
     .catch(function (error) {
       alert(error);
     });
