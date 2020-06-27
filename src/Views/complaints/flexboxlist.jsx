@@ -10,7 +10,7 @@ import Flexbox from "./flexbox";
 import "./flexboxlist.css";
 import { dataarray } from "./dataarray";
 
-const flexboxlist = ({ dataarray }) => {
+const FlexboxList = ({ dataarray }) => {
   const array = dataarray.map((user, i) => {
     return (
       <Flexbox
@@ -59,4 +59,4 @@ const flexboxlist = ({ dataarray }) => {
   );
 };
 
-export default flexboxlist;
+export default FlexboxList;
