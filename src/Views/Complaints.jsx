@@ -1,13 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import FlexboxList from "./complaints/FlexboxList";
 import { dataarray } from "./complaints/dataarray";
+import { fetchComplaints } from "../Fire/Complaints";
 import Bar from "./complaints/navbar";
+import { useSelector } from "react-redux";
 const Complaints = () => {
-  const [dataArray, setDataArray] = useState([]); 
+  const city = useSelector((state) => state.user.user.city);
+  const state = useSelector((state) => state.user.user.state);
+  const [dataArray, setDataArray] = useState(dataarray);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    console.log("useEffect started");
+    fetchComplaints(city, state).then((data) => {
+      setDataArray(data);
+    });
+    console.log("useEffect ended");
+  }, [fetchComplaints]);
+
+  console.log("IN render");
+  console.log(dataArray);
+
   return (
     <div>
-      <Bar />
-      <FlexboxList dataarray={dataArray} />
+      {/* {isLoading ? null : ( */}
+      <div>
+        <Bar />
+        <h1>{dataArray.length}</h1>
+        <FlexboxList dataarray={dataArray} />
+      </div>
+      {/* )} */}
     </div>
   );
 };
