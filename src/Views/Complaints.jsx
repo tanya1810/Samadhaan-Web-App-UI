@@ -7,12 +7,12 @@ import { useSelector } from "react-redux";
 const Complaints = () => {
   const city = useSelector((state) => state.user.user.city);
   const state = useSelector((state) => state.user.user.state);
-  const [dataArray, setDataArray] = useState(dataarray);
+  const [dataArray, setDataArray] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     console.log("useEffect started");
-    fetchComplaints(city, state, setDataArray)
+    fetchComplaints(city, state, setDataArray, setIsLoading);
     console.log("useEffect ended");
   }, []);
 
@@ -21,13 +21,13 @@ const Complaints = () => {
 
   return (
     <div>
-      {/* {isLoading ? null : ( */}
-      <div>
-        <Bar />
-        <h1>{dataArray.length}</h1>
-        <FlexboxList dataarray={dataArray} />
-      </div>
-      {/* )} */}
+      {isLoading ? <h1>Loading...</h1> : (
+        <div>
+          <Bar />
+          <h1>{dataArray.length}</h1>
+          <FlexboxList dataarray={dataArray} />
+        </div>
+      )}
     </div>
   );
 };

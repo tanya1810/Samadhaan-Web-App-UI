@@ -1,31 +1,44 @@
 import React from "react";
 import { myFirebase, db } from "../firebase";
 
-export const fetchComplaints = async (city, state, setState) => {
+export const fetchComplaints = async (city, state, setState, setLoading) => {
   let data = [];
+  let temp = {};
   console.log("fetchcomplaints started");
   const statesRef = db.collection("/States");
-
-  const snapshot = await statesRef.doc(state).collection(city).get();
-  var temp = {};
-  snapshot.forEach(async (departmentDoc) => {
-    temp.department = departmentDoc.id;
-    const tempSnapshot = await departmentDoc.ref.collection("Complaints").get();
-    tempSnapshot.forEach(async (complaintId) => {
-      temp.id = complaintId.id;
-      const complaintRef = await complaintId.data().ref;
-      const complaintRefSnapshot = await complaintRef.get();
-      const complaint = complaintRefSnapshot.data();
-      temp.text = complaint.complaintText;
-      temp.imageUrl = complaint.imageUrl;
-      const authorRef = complaint.author;
-      const authorRefSnapshot = await authorRef.get();
-      const author = authorRefSnapshot.data();
-      temp.name = author.firstName + author.lastName;
-      temp.number = author.phoneNumber;
-      data.push(temp);
+  statesRef
+    .doc(state)
+    .collection(city)
+    .onSnapshot((departmentQuerySnapshot) => {
+      const departmentDocChangeArray = departmentQuerySnapshot.docChanges();
+      departmentDocChangeArray.forEach((departmentDocChange) => {
+        temp.department = departmentDocChange.doc.id;
+        departmentDocChange.doc.ref
+          .collection("Complaints")
+          .onSnapshot((complaintIdQuerySanpshot) => {
+            const complaintIdDocChangesArray = complaintIdQuerySanpshot.docChanges();
+            complaintIdDocChangesArray.forEach((complaintIdDocChange) => {
+              temp.id = complaintIdDocChange.doc.id;
+              const complaintDocRef = complaintIdDocChange.doc.data().ref;
+              complaintDocRef.onSnapshot((complaintDocSnapshot) => {
+                temp.text = complaintDocSnapshot.data().complaintText;
+                temp.image = complaintDocSnapshot.data().imageUrl;
+                const authorDocRef = complaintDocSnapshot.data().author;
+                authorDocRef.onSnapshot((authorDocSnapshot) => {
+                  temp.name =
+                    authorDocSnapshot.data().firstName +
+                    " " +
+                    authorDocSnapshot.data().lastName;
+                  temp.number = authorDocSnapshot.data().phoneNumber;
+                  data.push(temp);
+                  setState((prev)=>{return ([...prev, temp])})
+                  setLoading(false);
+                });
+              });
+            });
+          });
+      });
     });
-  });
-
+  // setState(data);
   console.log("fetchComplaints ended");
 };
