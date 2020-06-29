@@ -24,6 +24,7 @@ const AppWrapper = () => {
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -38,7 +39,12 @@ function App() {
     } else {
       setLoggedIn(false);
     }
+    setIsLoading(false);
   });
+
+  if (isLoading) {
+    return <h1>Loading Screen</h1>;
+  }
 
   return (
     <BrowserRouter>

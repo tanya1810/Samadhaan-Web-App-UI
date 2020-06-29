@@ -12,11 +12,9 @@ const Complaints = () => {
 
   useEffect(() => {
     console.log("useEffect started");
-    fetchComplaints(city, state).then((data) => {
-      setDataArray(data);
-    });
+    fetchComplaints(city, state, setDataArray)
     console.log("useEffect ended");
-  }, [fetchComplaints]);
+  }, []);
 
   console.log("IN render");
   console.log(dataArray);
