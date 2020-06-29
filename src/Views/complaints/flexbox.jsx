@@ -1,9 +1,9 @@
 import React from "react";
 import "./flexbox.css";
 import { dataarray } from "./dataarray";
+import { text } from "@fortawesome/fontawesome-svg-core";
 
-const Flexbox = ({ department, name, number, id, time }) => {
-  time = JSON.parse(time);
+const Flexbox = ({ department, name, number, id, imageUrl, text }) => {
   return (
     <div className="complaint">
       <div className="title">
@@ -24,23 +24,17 @@ const Flexbox = ({ department, name, number, id, time }) => {
       <div class="container-fluid">
         <div class="row">
           <div class="col-3 column">
-            <h5>{department}</h5>
+            <h5>{"Dept: "+department}</h5>
             <hr />
-            <h5>
-              {" "}
-              {time.getDate() +
-                "/" +
-                time.getFullMonth() +
-                "/" +
-                time.getFullYear()}
-            </h5>
-            <h5>{time.getHours() + ":" + time.getMinutes()}</h5>
+            <h5>Date</h5>
+            <hr />
+            <h5>{"id: " + id }</h5>
           </div>
           <div class="col">
+            <img src={imageUrl}/>
             <div className="data">
               <h6>
-                Complaint
-                <a href="https://www.instagram.com"> The file attachment:</a>
+                {text}
               </h6>
             </div>
             <div className="buttons">
