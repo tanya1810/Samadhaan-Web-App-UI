@@ -1,7 +1,7 @@
 import React from 'react';
 import './landingpg.css';
 import {Link} from 'react-router-dom';
-const landingpg = () => {
+const Landingpg = () => {
     return (
       <div>
       <nav className="navbar navbar-dark bg-dark">
@@ -30,4 +30,4 @@ const landingpg = () => {
     );
   }
 
-  export default landingpg;
+  export default Landingpg;

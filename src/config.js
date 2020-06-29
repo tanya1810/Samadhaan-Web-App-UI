@@ -1,4 +1,4 @@
-export const firebaseConfig = {
+export default {
     apiKey: "AIzaSyDXQMr4nreu0Qtd4hzhqdcqtp-buyXH2ew",
     authDomain: "samadhaan-d7092.firebaseapp.com",
     databaseURL: "https://samadhaan-d7092.firebaseio.com",
