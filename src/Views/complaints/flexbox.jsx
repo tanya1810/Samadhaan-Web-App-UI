@@ -1,7 +1,5 @@
 import React from "react";
 import "./flexbox.css";
-import { dataarray } from "./dataarray";
-import { text } from "@fortawesome/fontawesome-svg-core";
 
 const Flexbox = ({ department, name, number, id, imageUrl, text }) => {
   return (

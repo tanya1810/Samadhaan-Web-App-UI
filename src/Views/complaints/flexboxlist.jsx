@@ -7,7 +7,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 // --------------------------------------------------------
 import "./flexboxlist.css";
-import Flexbox from "./Flexbox";
+import Flexbox from './Flexbox'
 
 const FlexboxList = ({ dataarray }) => {
   const array = dataarray.map((item) => {
