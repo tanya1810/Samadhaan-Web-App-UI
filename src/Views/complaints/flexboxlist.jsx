@@ -6,8 +6,8 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 // --------------------------------------------------------
-import Flexbox from "./Flexbox";
 import "./flexboxlist.css";
+import Flexbox from "./Flexbox";
 
 const FlexboxList = ({ dataarray }) => {
   const array = dataarray.map((item) => {
@@ -16,6 +16,9 @@ const FlexboxList = ({ dataarray }) => {
         name={item.name}
         department={item.department}
         number={item.number}
+        imageUrl={item.imageUrl}
+        text = {item.text}
+        id={item.id}
       />
     );
   });

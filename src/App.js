@@ -38,7 +38,9 @@ function App() {
     } else {
       setLoggedIn(false);
     }
+    
   });
+
 
   return (
     <BrowserRouter>
