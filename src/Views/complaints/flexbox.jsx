@@ -2,7 +2,8 @@ import React from "react";
 import "./flexbox.css";
 import { dataarray } from "./dataarray";
 
-const Flexbox = ({ department, name, number, id }) => {
+const Flexbox = ({ department, name, number, id, time }) => {
+  time = JSON.parse(time);
   return (
     <div className="complaint">
       <div className="title">
@@ -25,7 +26,15 @@ const Flexbox = ({ department, name, number, id }) => {
           <div class="col-3 column">
             <h5>{department}</h5>
             <hr />
-            <h5> Date</h5>
+            <h5>
+              {" "}
+              {time.getDate() +
+                "/" +
+                time.getFullMonth() +
+                "/" +
+                time.getFullYear()}
+            </h5>
+            <h5>{time.getHours() + ":" + time.getMinutes()}</h5>
           </div>
           <div class="col">
             <div className="data">

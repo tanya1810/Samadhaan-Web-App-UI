@@ -16,6 +16,10 @@ const FlexboxList = ({ dataarray }) => {
         name={item.name}
         department={item.department}
         number={item.number}
+        imageUrl={item.imageUrl}
+        text = {item.text}
+        time = {item.time}
+        id={item.id}
       />
     );
   });
