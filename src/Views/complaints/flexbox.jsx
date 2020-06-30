@@ -1,7 +1,7 @@
 import React from "react";
 import "./flexbox.css";
 
-const Flexbox = ({ department, name, number, id, imageUrl, text }) => {
+const Flexbox = ({ department, name, number, id, imageUrl, text, status }) => {
   return (
     <div className="complaint">
       <div className="title">
@@ -22,18 +22,19 @@ const Flexbox = ({ department, name, number, id, imageUrl, text }) => {
       <div class="container-fluid">
         <div class="row">
           <div class="col-3 column">
-            <h5>{"Dept: "+department}</h5>
+            <h5>{"Dept: " + department}</h5>
             <hr />
             <h5>Date</h5>
             <hr />
-            <h5>{"id: " + id }</h5>
+            <h5>{"id: " + id}</h5>
           </div>
           <div class="col">
-            <img src={imageUrl}/>
+            <img src={imageUrl} />
             <div className="data">
-              <h6>
-                {text}
-              </h6>
+              <h6>{text}</h6>
+              <div>
+                <h6>{"status: " + status}</h6>
+              </div>
             </div>
             <div className="buttons">
               <button

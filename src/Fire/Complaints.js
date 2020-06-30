@@ -22,6 +22,7 @@ export const fetchComplaints = async (city, state, setState, setLoading) => {
               complaintDocRef.onSnapshot((complaintDocSnapshot) => {
                 temp.text = complaintDocSnapshot.data().complaintText;
                 temp.imageUrl = complaintDocSnapshot.data().imageUrl;
+                temp.status = complaintDocSnapshot.data().status;
                 const authorDocRef = complaintDocSnapshot.data().author;
                 authorDocRef.onSnapshot((authorDocSnapshot) => {
                   temp.name =
