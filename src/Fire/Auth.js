@@ -13,14 +13,14 @@ export const firebaseAuthStateListener = () => {
 export const firebaseLogin = async (username, password) => {
    await myFirebase
     .auth()
-    .signInWithEmailAndPassword(username.toString(), password.toString());
-    // .catch(function (error) {
-    //   // Handle Errors here.
-    //   var errorCode = error.code;
-    //   var errorMessage = error.message;
-    //   console.log(errorMessage);
-    //   // ...
-    // });
+    .signInWithEmailAndPassword(username.toString(), password.toString())
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      console.log(errorMessage);
+      // ...
+    });
 };
 
 export const firebaseLogout = async () => {

@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./dashboard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 import { Link } from "react-router-dom";
+import { fetchDashboardData } from "../Fire/Dashboard";
+import { useSelector } from "react-redux";
 
 const Dashboard = () => {
+  const city = useSelector((state) => state.user.user.city);
+  const state = useSelector((state) => state.user.user.state);
+  const [data, setData] = useState({
+    total: "Calculating...",
+    solved: "Calculating...",
+    pending: "Calculating...",
+    ignored: "Calculating...",
+  });
+
+  useEffect(() => {
+    fetchDashboardData(city, state, setData);
+  }, []);
+
   return (
     <div>
       <div id="wrapper" style={{ height: "100vh" }}>
@@ -38,7 +53,7 @@ const Dashboard = () => {
             <div className="container-fluid">
               <div className="d-sm-flex align-items-center justify-content-between mt-4 mb-4">
                 <h1 className="h1 mb-2 text-gray-800">
-                  <b>Department City</b>
+                  <b>{city + ", " + state}</b>
                 </h1>
               </div>
               <div className="row">
@@ -51,7 +66,7 @@ const Dashboard = () => {
                             Complaints
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            4000
+                            {data.total}
                           </div>
                         </div>
                         <div className="col-auto">
@@ -70,10 +85,13 @@ const Dashboard = () => {
                             Solved Complaints
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            2000
+                            {data.solved}
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            50%
+                            {data.solved === "Calculating..."
+                              ? null
+                              : ((data.solved / data.total) * 100).toString() +
+                                "%"}
                           </div>
                         </div>
                         <div className="col-auto">
@@ -92,10 +110,13 @@ const Dashboard = () => {
                             Pending Requests
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            1000
+                            {data.pending}
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            25%
+                            {data.pending === "Calculating..."
+                              ? null
+                              : ((data.pending / data.total) * 100).toString() +
+                                "%"}
                           </div>
                         </div>
                       </div>
@@ -111,10 +132,13 @@ const Dashboard = () => {
                             Ignored Complaints
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            1000
+                            {data.ignored}
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            25%
+                            {data.ignored === "Calculating..."
+                              ? null
+                              : ((data.ignored / data.total) * 100).toString() +
+                                "%"}
                           </div>
                         </div>
                         <div className="col-auto">

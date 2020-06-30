@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Landingpg from "./Views/Landingpg";
 import Mainpg from "./Views/Main";
 import Login from "./Views/Loginpg";
@@ -7,17 +7,40 @@ import Complaints from "./Views/Complaints";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { firebaseAuthStateListener, firebaseLogin } from "./Fire/Auth";
 import { myFirebase } from "./firebase";
+import { Provider, useDispatch } from "react-redux";
+import { applyMiddleware, createStore } from "redux";
+import allReducers from "./store/reducers";
+import thunk from "redux-thunk";
+import * as userActions from "./store/actions/user";
+
+const AppWrapper = () => {
+  const store = createStore(allReducers, applyMiddleware(thunk));
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
 
 function App() {
-  const [loggedIn,setLoggedIn] = useState(false);
-  
-  myFirebase.auth().onAuthStateChanged( (user) => {
+  const [loggedIn, setLoggedIn] = useState(false);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (loggedIn) {
+      dispatch(userActions.fetchCity(myFirebase.auth().currentUser.uid));
+    }
+  }, [loggedIn]);
+
+  myFirebase.auth().onAuthStateChanged((user) => {
     if (user) {
       setLoggedIn(true);
     } else {
       setLoggedIn(false);
     }
+    
   });
+
 
   return (
     <BrowserRouter>
@@ -32,7 +55,7 @@ function App() {
           {loggedIn ? <Complaints /> : <Redirect to="/login" />}
         </Route>
         <Route path="/login">
-        {loggedIn ? <Redirect to="/mainmenu" /> : <Login />}
+          {loggedIn ? <Redirect to="/mainmenu" /> : <Login />}
         </Route>
         <Route path="/" exact>
           {loggedIn ? <Redirect to="/mainmenu" /> : <Landingpg />}
@@ -42,4 +65,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppWrapper;
