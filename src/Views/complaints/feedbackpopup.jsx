@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export class feedbackpopup extends Component {
+export class Feedback extends Component {
   constructor(props) {
     super(props);
   }
@@ -53,3 +53,4 @@ export class feedbackpopup extends Component {
     );
   }
 }
+export default Feedback;
