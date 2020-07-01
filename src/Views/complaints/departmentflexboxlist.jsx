@@ -9,9 +9,11 @@ import { faCog } from "@fortawesome/free-solid-svg-icons";
 import Flexbox from "./flexbox";
 import "./flexboxlist.css";
 import { dataarray } from "./dataarray";
+import { departmentselected } from "./departmentselected";
 
-const flexboxlist = ({ dataarray }) => {
+const departmentflexboxlist = ({ dataarray, departmentselected }) => {
   const array = dataarray.map((user, i) => {
+      if({dataarray,[i]:department} === {departmentselected} )
     return (
       <Flexbox
         name={dataarray[i].name}
@@ -61,4 +63,4 @@ const flexboxlist = ({ dataarray }) => {
   );
 };
 
-export default flexboxlist;
+export default departmentflexboxlist;

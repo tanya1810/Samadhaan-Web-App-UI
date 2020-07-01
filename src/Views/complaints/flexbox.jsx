@@ -1,17 +1,19 @@
 import React from "react";
 import "./flexbox.css";
+import { dataarray } from "./dataarray";
 
-const Flexbox = ({ department, name, number, id, imageUrl, text, status }) => {
+const Flexbox = ({ department, name, number, id, address }) => {
   return (
-    <div className="complaint">
+    <div className="complaintcard">
       <div className="title">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm">
               <h4>{name}</h4>
+              <h4 className="id">{id}</h4>
             </div>
-            <div class="col-sm">
-              <h4>ADDRESS</h4>
+            <div class="col-sm address">
+              <h4>{address}</h4>
             </div>
             <div class="col-sm ">
               <h4>{number}</h4>
@@ -21,30 +23,17 @@ const Flexbox = ({ department, name, number, id, imageUrl, text, status }) => {
       </div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-3 column">
-            <h5>{"Dept: " + department}</h5>
+          <div class="col-3 sidecolumn">
+            <h5>{department}</h5>
             <hr />
-            <h5>Date</h5>
-            <hr />
-            <h5>{"id: " + id}</h5>
+            <h5> Date</h5>
           </div>
           <div class="col">
-            <img src={imageUrl} />
             <div className="data">
-              <h6>{text}</h6>
-              <div>
-                <h6>{"status: " + status}</h6>
-              </div>
+              <h6 className="complaint">Complaint</h6>
             </div>
             <div className="buttons">
-              <button
-                type="button"
-                class="btn btn-outline-secondary"
-                data-target="#collapseExample"
-                data-toggle="collapse"
-                aria-expanded="false"
-                aria-controls="collapseExample"
-              >
+              <button type="button" class="btn btn-outline-secondary">
                 Feedback
               </button>
               <button type="button" class="btn btn-outline-secondary">
@@ -56,12 +45,6 @@ const Flexbox = ({ department, name, number, id, imageUrl, text, status }) => {
               <button type="button" class="btn btn-outline-secondary">
                 Ignore
               </button>
-              <div class="collapse" id="collapseExample">
-                <div class="card card-body">
-                  ENTER FEEDBACK
-                  <input type="text" />
-                </div>
-              </div>
             </div>
           </div>
         </div>
