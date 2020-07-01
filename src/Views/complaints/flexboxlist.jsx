@@ -10,15 +10,16 @@ import Flexbox from "./flexbox";
 import "./flexboxlist.css";
 import { dataarray } from "./dataarray";
 
-const flexboxlist = ({ dataarray }) => {
-  const array = dataarray.map((user, i) => {
+const flexboxlist = (props) => {
+  const array = props.dataarray.map((user, i) => {
     return (
       <Flexbox
-        name={dataarray[i].name}
-        department={dataarray[i].department}
-        number={dataarray[i].number}
-        address={dataarray[i].address}
-        id={dataarray[i].id}
+        {...props}
+        name={props.dataarray[i].name}
+        department={props.dataarray[i].department}
+        number={props.dataarray[i].number}
+        address={props.dataarray[i].address}
+        id={props.dataarray[i].id}
       />
     );
   });
