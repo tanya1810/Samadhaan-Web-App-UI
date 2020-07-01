@@ -11,10 +11,10 @@ const bar =() => {
                       </h1></span>
                       <ul className="navbar-nav ml-auto">
                         <li className="nav-item mr-4" >
-                          <Link to='/mainmenu'><a className="nav-link"  href="#"><FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} /></a></Link>
+                          <Link to='/mainmenu'><FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} /></Link>
                         </li>
                        <li className="nav-item">
-                        <Link to='/loginpg'><a className="nav-link"  href="#"><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></a></Link>
+                        <Link to='/loginpg'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
                        </li>
                      </ul>
                    </nav>

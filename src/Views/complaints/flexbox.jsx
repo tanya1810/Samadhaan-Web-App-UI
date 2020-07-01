@@ -1,5 +1,6 @@
 import React from "react";
 import "./flexbox.css";
+import { Feedback } from './feedbackpopup';
 import { dataarray } from "./dataarray";
 
 const Flexbox = ({ department, name, number, id, address }) => {
@@ -34,7 +35,7 @@ const Flexbox = ({ department, name, number, id, address }) => {
             </div>
             <div className="buttons">
               <button type="button" class="btn btn-outline-secondary">
-                Feedback
+               <Feedback />Feedback
               </button>
               <button type="button" class="btn btn-outline-secondary">
                 Mark Complete
