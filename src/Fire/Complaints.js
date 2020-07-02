@@ -10,8 +10,10 @@ export const fetchComplaints = async (city, state, setState, setLoading) => {
     .collection(city)
     .onSnapshot((departmentQuerySnapshot) => {
       const departmentDocChangeArray = departmentQuerySnapshot.docChanges();
+      
       departmentDocChangeArray.forEach((departmentDocChange) => {
         temp.department = departmentDocChange.doc.id;
+        console.log(departmentDocChange.doc.id);
         departmentDocChange.doc.ref
           .collection("Complaints")
           .onSnapshot((complaintIdQuerySanpshot) => {

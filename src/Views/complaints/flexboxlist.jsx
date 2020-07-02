@@ -20,6 +20,7 @@ const flexboxlist = (props) => {
         number={props.dataarray[i].number}
         address={props.dataarray[i].address}
         id={props.dataarray[i].id}
+        status={props.dataarray[i].status}
       />
     );
   });

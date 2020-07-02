@@ -28,6 +28,14 @@ const Flexbox = (props) => {
             <h5>{props.department}</h5>
             <hr />
             <h5> Date</h5>
+            <hr />
+            <h5>
+              {props.status == 0
+                ? "pending"
+                : props.status == 1
+                ? "resolved"
+                : "ignored"}
+            </h5>
           </div>
           <div class="col">
             <div className="data">
