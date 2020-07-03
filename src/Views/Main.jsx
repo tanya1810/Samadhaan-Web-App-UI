@@ -13,7 +13,7 @@ const Mainpg = () => {
                       </h1></span>
                       <ul className="navbar-nav ml-auto">
                        <li className="nav-item">
-                        <Link to='/login'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
+                        <Link to='/'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
                        </li>
                      </ul>
                    </nav>

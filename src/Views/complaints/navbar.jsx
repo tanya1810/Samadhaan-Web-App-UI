@@ -18,7 +18,7 @@ const bar =() => {
                           <Link to='/mainmenu'><FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} /></Link>
                         </li>
                        <li className="nav-item">
-                        <Link to='/login'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
+                        <Link to='/'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
                        </li>
                      </ul>
                      </div>

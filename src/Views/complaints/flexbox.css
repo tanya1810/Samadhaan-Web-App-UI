@@ -67,3 +67,10 @@ body {
 	  display: none;
 	}
   }
+  .complaint {
+	display: flex;
+	flex-wrap: wrap;
+	border: 0px;
+	max-width: fit-content;
+	padding-bottom: 30px;
+  }
