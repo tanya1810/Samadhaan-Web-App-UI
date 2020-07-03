@@ -18,14 +18,14 @@ const Landingpg = () => {
       <p className="lead">Finding solutions to all your needs.</p>
     </div>
   
-  <form>
-          <div id="lol">
+  <div className="row justify-content-center">
+          <div  className="col-xl-3 col-6 " id="lol">
             <button type="button"  className="btn btn-outline-dark btn-lg" ><Link to="/login" >ADMIN</Link></button>
           </div> 
-          <div id="lel"> 
+          <div className="col-xl-3 col-6 " id="lel"> 
             <button  type="button"  className="btn btn-outline-dark btn-lg" ><Link to="/login">DEPARTMENT</Link></button>
          </div>
-  </form>
+  </div>
   </div>
     );
   }

@@ -28,7 +28,7 @@ const flexboxlist = (props) => {
     <div>
       <div class="container-fluid">
         <div class="row">
-          <div class="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
+          <div className="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
             <div className="subpanel" style={{ color: "blue" }}>
               All complaints
             </div>

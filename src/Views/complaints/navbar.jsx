@@ -9,14 +9,19 @@ const bar =() => {
                     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                       <span className="navbar-brand mb-0 h1"><h1>Sama<span>dhaan</span>
                       </h1></span>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                         <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
                       <ul className="navbar-nav ml-auto">
                         <li className="nav-item mr-4" >
                           <Link to='/mainmenu'><FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} /></Link>
                         </li>
                        <li className="nav-item">
-                        <Link to='/loginpg'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
+                        <Link to='/login'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
                        </li>
                      </ul>
+                     </div>
                    </nav>
                   </div>
 );
