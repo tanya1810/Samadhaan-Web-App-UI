@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Complaints.css";
 import { fetchComplaints } from "../Fire/Complaints";
 import Bar from "./complaints/navbar";
 import { useSelector } from "react-redux";
@@ -19,7 +20,7 @@ const Complaints = () => {
   return (
     <div>
       {isLoading ? (
-        <h1>Loading...</h1>
+        <img src="https://media2.giphy.com/media/1vY8RboCYg4wM/200w.webp?cid=ecf05e4742e85bcbee9a8de558ec7fb82f836d8dc432438b&rid=200w.webp" />
       ) : (
         <div>
           <Bar />

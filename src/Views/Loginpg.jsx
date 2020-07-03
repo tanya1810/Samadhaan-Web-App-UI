@@ -48,7 +48,7 @@ const Loginpg = () => {
           <input
             value={password}
             type="password"
-            id="password"
+            id="login"
             className="fadeIn third"
             name="login"
             placeholder="Password"
