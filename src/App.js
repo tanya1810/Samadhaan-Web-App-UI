@@ -4,6 +4,7 @@ import Mainpg from "./Views/Main";
 import Login from "./Views/Loginpg";
 import Dashboard from "./Views/Dashboard";
 import Complaints from "./Views/Complaints";
+import Departlist from "./Views/Departlist";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { firebaseAuthStateListener, firebaseLogin } from "./Fire/Auth";
 import { myFirebase } from "./firebase";
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route path="/complaints">
           {loggedIn ? <Complaints /> : <Redirect to="/login" />}
+        </Route>
+        <Route path="/transfer">
+          {loggedIn ? <Departlist /> : <Redirect to="/login" /> }
         </Route>
         <Route path="/login">
           {loggedIn ? <Redirect to="/mainmenu" /> : <Login />}

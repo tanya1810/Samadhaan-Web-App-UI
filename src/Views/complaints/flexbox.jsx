@@ -2,6 +2,7 @@ import React from "react";
 import "./flexbox.css";
 import { Feedback } from "./feedbackpopup";
 import { dataarray } from "./dataarray";
+import { Link } from 'react-router-dom';
 
 const Flexbox = (props) => {
   return (
@@ -55,7 +56,7 @@ const Flexbox = (props) => {
                 Mark Complete
               </button>
               <button type="button" class="btn btn-outline-secondary">
-                Transfer
+                <Link to="/transfer">Transfer</Link>
               </button>
               <button type="button" class="btn btn-outline-secondary">
                 Ignore
