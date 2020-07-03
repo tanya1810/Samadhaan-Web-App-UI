@@ -7,7 +7,7 @@ const Landingpg = () => {
       <nav className="navbar navbar-dark bg-dark">
     <a className="navbar-brand" href="#">
      <img src="https://lh3.googleusercontent.com/Jsvb9oenmsRPG1-L2sjEiigWf-jKLzIdxzYxfgS5jzsnizZrJTKeU3Scl3MHXM672-qz=s180-rw" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
-      Samadhan
+      Samadhaan
     </a>
   </nav>
    <div id="im">
@@ -19,12 +19,12 @@ const Landingpg = () => {
     </div>
   
   <form>
-      <div id="lol">
-         <div id="bu">
+          <div id="lol">
             <button type="button"  className="btn btn-outline-dark btn-lg" ><Link to="/login" >ADMIN</Link></button>
+          </div> 
+          <div id="lel"> 
             <button  type="button"  className="btn btn-outline-dark btn-lg" ><Link to="/login">DEPARTMENT</Link></button>
          </div>
-      </div>
   </form>
   </div>
     );

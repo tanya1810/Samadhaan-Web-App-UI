@@ -29,6 +29,7 @@ body {
   }
   .btn-outline-secondary {
 	border: 0px;
+	margin: 1%;
   }
   .sidecolumn {
 	background-color: #6c757d;

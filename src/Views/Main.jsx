@@ -16,7 +16,7 @@ const Mainpg = () => {
             alt=""
             loading="lazy"
           />
-          Samadhan
+          Samadhaan
         </a>
       </nav>
       <div id="im">
@@ -30,13 +30,17 @@ const Mainpg = () => {
         Sama<span>dhaan</span>
         <div>City</div>
       </div>
+      <div id="d">
       <div id="dd">
         <button type="button" className="btn btn-outline-dark btn-lg">
           <Link to="/dashboard">DASHBOARD</Link>
         </button>
+        </div>
+        <div id="pp">
         <button type="button" id="ee" className="btn btn-outline-dark btn-lg">
           <Link to="/complaints">COMPLAINTS</Link>
         </button>
+      </div>
       </div>
       <div id="lo">
         <button

@@ -1,8 +1,19 @@
 #lol{
-	margin: auto;
+	margin: 2%;
 	width: 30%; 
   border: 2px solid;
   padding: 10px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 5px 10px #888888;
+}
+#lel{
+	margin: 2%;
+	width: 30%; 
+  border: 2px solid;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
   box-shadow: 5px 10px #888888;
 }
 #bu{
@@ -25,5 +36,8 @@ span{
 	text-align: center;
 }
 #im{
+	text-align: center;
+}
+form{
 	text-align: center;
 }
