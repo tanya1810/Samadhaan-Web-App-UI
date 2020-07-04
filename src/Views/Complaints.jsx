@@ -5,6 +5,8 @@ import Bar from "./complaints/navbar";
 import { useSelector } from "react-redux";
 import FlexboxList from "./complaints/flexboxlist";
 import Feedback from "./complaints/feedbackpopup";
+import { dataarray } from "./complaints/dataarray";
+import LoadingScreen from "./LoadingScreen";
 
 const Complaints = () => {
   const city = useSelector((state) => state.user.user.city);
@@ -13,18 +15,18 @@ const Complaints = () => {
   const [dataArray, setDataArray] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
-    fetchComplaints(city, state, setDataArray, setIsLoading);
-  }, []);
+  // useEffect(() => {
+  //   fetchComplaints(city, state, setDataArray, setIsLoading);
+  // }, []);
 
   return (
     <div>
       {isLoading ? (
-        <img src="https://media2.giphy.com/media/1vY8RboCYg4wM/200w.webp?cid=ecf05e4742e85bcbee9a8de558ec7fb82f836d8dc432438b&rid=200w.webp" />
+        <LoadingScreen/>
       ) : (
         <div>
           <Bar />
-          <FlexboxList setIsPopup={setIsPopup} dataarray={dataArray} />
+          <FlexboxList setIsPopup={setIsPopup} dataarray={dataarray} />
           {isPopup ? <Feedback /> : null}
         </div>
       )}
