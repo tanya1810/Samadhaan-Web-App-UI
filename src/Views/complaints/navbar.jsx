@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import {Link} from 'react-router-dom';
+
 const bar =() => {
   return(
                   <div>
@@ -18,7 +19,7 @@ const bar =() => {
                           <Link to='/mainmenu'><FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} /></Link>
                         </li>
                        <li className="nav-item">
-                        <Link to='/'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
+                        <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
                        </li>
                      </ul>
                      </div>

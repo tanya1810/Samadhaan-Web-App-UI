@@ -23,23 +23,23 @@ const Departlist = () =>{
                          </div>
                          <div id="yo">
                            <button className="btn btn-outline-dark">Animal Husbandry</button> 
-                           <button className="btn btn-outline-secondary">BDPO </button> 
-                           <button className="btn btn-outline-primary">Civil Hospital</button> 
+                           <button className="btn btn-outline-dark">BDPO </button> 
+                           <button className="btn btn-outline-dark">Civil Hospital</button> 
                            <button className="btn btn-outline-dark">DHBVN(Urban)</button>  
-                           <button className="btn btn-outline-secondary">DHBVN(Rural)</button>  
-                           <button className="btn btn-outline-primary">Distt. Town planner</button>  
+                           <button className="btn btn-outline-dark">DHBVN(Rural)</button>  
+                           <button className="btn btn-outline-dark">Distt. Town planner</button>  
                            <button className="btn btn-outline-dark">Education(Elementary)</button>  
-                           <button className="btn btn-outline-secondary">Education(Higher)</button>  
-                           <button className="btn btn-outline-primary">Fire Department</button>  
+                           <button className="btn btn-outline-dark">Education(Higher)</button>  
+                           <button className="btn btn-outline-dark">Fire Department</button>  
                            <button className="btn btn-outline-dark">HVPNL</button>  
-                           <button className="btn btn-outline-secondary">Irrigation</button>  
-                           <button className="btn btn-outline-primary">Nagar Parishad</button>  
+                           <button className="btn btn-outline-dark">Irrigation</button>  
+                           <button className="btn btn-outline-dark">Nagar Parishad</button>  
                            <button className="btn btn-outline-dark">PWD</button>  
-                           <button className="btn btn-outline-secondary">PUBLIC HEALTH(Water)</button>  
-                           <button className="btn btn-outline-primary">PUBLIC HEALTH(Sewage)</button>  
+                           <button className="btn btn-outline-dark">PUBLIC HEALTH(Water)</button>  
+                           <button className="btn btn-outline-dark">PUBLIC HEALTH(Sewage)</button>  
                            <button className="btn btn-outline-dark">PUBLIC HEALTH(Reny Well)</button>  
-                           <button className="btn btn-outline-secondary">Social Welfare</button>  
-                           <button className="btn btn-outline-primary">Tehsil</button>  
+                           <button className="btn btn-outline-dark">Social Welfare</button>  
+                           <button className="btn btn-outline-dark">Tehsil</button>  
 
                          </div>
 

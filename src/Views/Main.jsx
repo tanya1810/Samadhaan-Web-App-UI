@@ -12,8 +12,13 @@ const Mainpg = () => {
                       <span className="navbar-brand mb-0 h1"><h1>Sama<span>dhaan</span>
                       </h1></span>
                       <ul className="navbar-nav ml-auto">
-                       <li className="nav-item">
-                        <Link to='/'><FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} /></Link>
+                       <li 
+                       className="nav-item"
+                       style={{color : "white"}}
+                   onClick={() => {
+                        firebaseLogout();   }} 
+                       >
+                        <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
                        </li>
                      </ul>
                    </nav>

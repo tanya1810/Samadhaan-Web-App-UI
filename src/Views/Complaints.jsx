@@ -13,7 +13,7 @@ const Complaints = () => {
   const state = useSelector((state) => state.user.user.state);
   const [isPopup, setIsPopup] = useState(false);
   const [dataArray, setDataArray] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   // useEffect(() => {
   //   fetchComplaints(city, state, setDataArray, setIsLoading);
@@ -22,7 +22,8 @@ const Complaints = () => {
   return (
     <div>
       {isLoading ? (
-        <LoadingScreen/>
+        <h1>Loading</h1>
+       // <LoadingScreen/>
       ) : (
         <div>
           <Bar />

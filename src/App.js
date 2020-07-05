@@ -47,22 +47,22 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/dashboard">
-          {loggedIn ? <Dashboard /> : <Redirect to="/login" />}
+          {loggedIn ? <Dashboard /> : <Redirect to="/Login" />}
         </Route>
         <Route path="/mainmenu">
-          {loggedIn ? <Mainpg /> : <Redirect to="/login" />}
+          {loggedIn ? <Mainpg /> : <Redirect to="/Login" />}
         </Route>
         <Route path="/complaints">
-          {loggedIn ? <Complaints /> : <Redirect to="/login" />}
+          {loggedIn ? <Complaints /> : <Redirect to="/Login" />}
         </Route>
         <Route path="/transfer">
-          {loggedIn ? <Departlist /> : <Redirect to="/login" /> }
+          {loggedIn ? <Departlist /> : <Redirect to="/Login" /> }
         </Route>
-        <Route path="/login">
-          {loggedIn ? <Redirect to="/mainmenu" /> : <Login />}
+        <Route path="/Login">
+          { loggedIn ? <Redirect to="/mainmenu" /> : <Login /> }
         </Route>
         <Route path="/" exact>
-          {loggedIn ? <Redirect to="/mainmenu" /> : <Landingpg />}
+          { <Landingpg />}
         </Route>
       </Switch>
     </BrowserRouter>

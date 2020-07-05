@@ -1,7 +1,8 @@
 #yo{
-    display: block;
-    width: 50%;
-    margin:0.5%;
+    display: inline-block;
+    width: 100%;
+    padding: 2%;
+    margin: auto;
     text-align: center;
     
 }

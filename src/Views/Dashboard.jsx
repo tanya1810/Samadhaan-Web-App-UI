@@ -7,6 +7,8 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { fetchDashboardData } from "../Fire/Dashboard";
 import { useSelector } from "react-redux";
+import { firebaseLogout } from "../Fire/Auth";
+
 
 const Dashboard = () => {
   const city = useSelector((state) => state.user.user.city);
@@ -39,13 +41,16 @@ const Dashboard = () => {
                 </a>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link to="/loginpg">
+            <li
+             className="nav-item"
+             onClick={() => {
+              firebaseLogout();   }}
+             >
+              
                 <a className="nav-link" href="#">
                   <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
                 </a>
-              </Link>
-            </li>
+              </li>
           </ul>
         </nav>
         <div id="content-wrapper" className="d-flex flex-column">
