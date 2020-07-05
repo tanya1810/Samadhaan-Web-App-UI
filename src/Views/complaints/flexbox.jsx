@@ -2,7 +2,7 @@ import React from "react";
 import "./flexbox.css";
 import { Feedback } from "./feedbackpopup";
 import { dataarray } from "./dataarray";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Flexbox = (props) => {
   return (
@@ -40,7 +40,11 @@ const Flexbox = (props) => {
           </div>
           <div class="col">
             <div className="data">
-              <h6 className="complaint">Complaint</h6>
+              <h6 className="complaint">
+                Complaint Complaint Complaint Complaint Complaint Complaint{" "}
+                Complaint Complaint Complaint Complaint Complaint Complaint{" "}
+                Complaint Complaint v{" "}
+              </h6>
             </div>
             <div className="buttons">
               <button

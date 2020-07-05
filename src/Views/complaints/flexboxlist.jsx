@@ -28,18 +28,21 @@ const flexboxlist = (props) => {
     <div>
       <div class="container-fluid">
         <div class="row">
-          <div className="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
+          <div
+            className="col-3 column3"
+            style={{ position: "fixed", zIndex: "1" }}
+          >
             <div className="subpanel" style={{ color: "blue" }}>
               All complaints
             </div>
-            <FontAwesomeIcon className="fa" icon={faList} />
+            <FontAwesomeIcon className="fa subpanel" icon={faList} />
             <br />
             <hr />
             <div className="subpanel" style={{ color: "green" }}>
               Processing{" "}
             </div>
             <FontAwesomeIcon
-              className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw"
+              className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw subpanel"
               icon={faCog}
             />
             <br />
@@ -47,15 +50,16 @@ const flexboxlist = (props) => {
             <div className="subpanel" style={{ color: "#FFD700" }}>
               Completed{" "}
             </div>
-            <FontAwesomeIcon className="fa" icon={faCheck} />
+            <FontAwesomeIcon className="fa subpanel" icon={faCheck} />
             <br />
             <hr />
             <div className="subpanel" style={{ color: "red" }}>
               Ignore{" "}
             </div>
-            <FontAwesomeIcon className="fa" icon={faTimes} />
+            <FontAwesomeIcon className="fa subpanel" icon={faTimes} />
             <br />
           </div>
+          <div className="topbackground"></div>
           <div class="col flexlist">{array}</div>
         </div>
       </div>
