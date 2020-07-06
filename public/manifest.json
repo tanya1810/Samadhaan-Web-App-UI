@@ -1,16 +1,17 @@
 {
   "short_name": "Samadhaan ",
    "name": "Samadhaan App",
+   "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
   "icons": [
     {
-      "src": "samadhaan.png",
+      "src": "samadhaan-64x64.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/png"
     }
    
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  
 }
