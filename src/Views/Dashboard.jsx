@@ -34,7 +34,7 @@ const Dashboard = () => {
             </h1>
           </span>
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item mr-4">
+            <li className="nav-item mr-2">
               <Link to="/mainmenu">
                 <a className="nav-link" href="#">
                   <FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} />
@@ -42,8 +42,8 @@ const Dashboard = () => {
               </Link>
             </li>
             <li
-             className="nav-item"
-             onClick={() => {
+             className="nav-item mr-2"
+             onClick={() => {  
               firebaseLogout();   }}
              >
               
