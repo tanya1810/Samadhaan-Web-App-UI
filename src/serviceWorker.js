@@ -127,7 +127,50 @@ function checkValidServiceWorker(swUrl, config) {
       );
     });
 }
+const cacheName = "samadhaan";
+const staticAssests = [
+  './index.html',
+  './index.js',
+  './App.js',
+  './manifest.json'
 
+]
+
+/*self.addEventListener(install, async e=>{ 
+  const cache = await caches.open(cacheName);
+  await cache.addAll(staticAssests);
+  return self.skipwaiting();
+});
+self.addEventListener('activate', e =>{
+ self.ClientRectList.claim();
+});
+self.addEventListener('fetch', async e =>{
+  const req = e.requests;
+  const url = new URL(req.url);
+  if(url.origin === location.origin){
+    e.respondWith(cacheFirst(req));
+  } else {
+    e.respondWith(networkAndCache(req));
+  }
+});
+async function cacheFirst(req) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(req);
+  return cached || fetch(req);
+}
+
+async function networkAndCache(req) {
+  const cache = await caches.open(cacheName);
+  try {
+    const fresh = await fetch(req);
+    await cache.put(req, fresh.clone());
+    return fresh;
+  }catch (e) {
+    const cached = await cache.match(req);
+    return cached;
+  }
+}
+*/
 export function unregister() {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
@@ -139,3 +182,4 @@ export function unregister() {
       });
   }
 }
+

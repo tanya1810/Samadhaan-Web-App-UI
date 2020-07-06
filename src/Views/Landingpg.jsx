@@ -6,7 +6,7 @@ const Landingpg = () => {
       <div>
       <nav className="navbar navbar-dark bg-dark">
     <a className="navbar-brand" href="#">
-     <img src="https://lh3.googleusercontent.com/Jsvb9oenmsRPG1-L2sjEiigWf-jKLzIdxzYxfgS5jzsnizZrJTKeU3Scl3MHXM672-qz=s180-rw" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy" />
+     <img src="https://lh3.googleusercontent.com/Jsvb9oenmsRPG1-L2sjEiigWf-jKLzIdxzYxfgS5jzsnizZrJTKeU3Scl3MHXM672-qz=s180-rw" width="30" height="30" className="d-inline-block align-top" alt="" loading="lazy" />
       Samadhaan
     </a>
   </nav>

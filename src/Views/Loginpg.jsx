@@ -16,7 +16,7 @@ const Loginpg = () => {
   return (
     <div className="wrapper fadeInDown">
       <div id="formContent">
-        <div class="fadeIn first">
+        <div className="fadeIn first">
           <img
             src="https://image.freepik.com/free-vector/login-concept-illustration_114360-757.jpg"
             id="icon"
