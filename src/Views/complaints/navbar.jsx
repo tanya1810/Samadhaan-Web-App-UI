@@ -7,35 +7,68 @@ import { Link } from "react-router-dom";
 const bar = () => {
   return (
     <div>
-      <nav
-        className="navbar navbar-expand-lg navbar-dark bg-dark"
-        style={{ position: "fixed", zIndex: "1", width: "100%" }}
-      >
+      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <span className="navbar-brand mb-0 h1">
           <h1>
             Sama<span>dhaan</span>
           </h1>
         </span>
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item mr-4">
-              <Link to="/mainmenu">
-                <FontAwesomeIcon className="fa fa-home fa-3x" icon={faHome} />
-              </Link>
+            <li className="nav-item dropdown mr-4">
+              <a
+                className="nav-link dropdown-toggle h5"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Departments
+              </a>
+              <div
+                className="dropdown-menu"
+                ariaLabelledby="navbarDropdownMenuLink"
+              >
+                <a className="dropdown-item" href="#">
+                  Department-1
+                </a>
+                <a className="dropdown-item" href="#">
+                  Department-2
+                </a>
+                <a className="dropdown-item" href="#">
+                  Department-3
+                </a>
+              </div>
             </li>
             <li className="nav-item">
-              <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
+              <div>
+                <Link to="/mainmenu">
+                  <a className="nav-link" href="#">
+                    <FontAwesomeIcon
+                      className="fa fa-home fa-3x"
+                      icon={faHome}
+                    />
+                  </a>
+                </Link>
+              </div>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">
+                <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
+              </a>
             </li>
           </ul>
         </div>
