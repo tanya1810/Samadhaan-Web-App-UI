@@ -27,7 +27,7 @@ const Complaints = () => {
         // <LoadingScreen/>
         <div>
           <Bar />
-          <FlexboxList setIsPopup={setIsPopup} dataarray={dataarray} />
+          <FlexboxList setIsPopup={setIsPopup} dataarray={dataArray} />
           {isPopup ? <Feedback /> : null}
         </div>
       )}

@@ -10,11 +10,11 @@ class Flexbox extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      department: "",
-      name: "",
-      number: "",
-      id: "",
-      address: "",
+      department: props.department,
+      name: props.name,
+      number: props.number,
+      id: props.id,
+      address: props.address,
       isOpen: false,
     };
   }
