@@ -5,6 +5,10 @@ function Feedbackpopup(props) {
     props.history.push("/complaints");
   };
 
+  // function FileSelected = (event) => {
+  //   console.log(event);
+  // }
+
   return (
     <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
       <div className="modal-content">
@@ -23,6 +27,8 @@ function Feedbackpopup(props) {
         </div>
         <div className="modal-body">
           <input type="text" />
+          <input type="file" />
+          <button className="btn btn-secondary">Upload</button>
         </div>
         <div className="modal-footer">
           <button
