@@ -23,7 +23,7 @@ export const fetchComplaints = async (city, state, setState, setLoading) => {
     for (var j = 0; j < complaintIdDocChangesArray.length; j++) {
       const complaintIdDocChange = complaintIdDocChangesArray[j];
       const complaintDocRef = complaintIdDocChange.doc.data().ref;
-      const complaintDocSnapshot = await complaintDocRef.get();
+      complaintDocRef.onSnapshot(async complaintDocSnapshot=>{
       const authorDocRef = complaintDocSnapshot.data().author;
       const authorDocSnapshot = await authorDocRef.get();
       let temp ={};
@@ -39,6 +39,7 @@ export const fetchComplaints = async (city, state, setState, setLoading) => {
       console.log("heresdata", JSON.stringify(data));
       setState(Object.values(data));
       setLoading(false);
+    })
     }
   }
   console.log("fetchComplaints ended");
