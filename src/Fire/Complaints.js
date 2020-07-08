@@ -30,10 +30,8 @@ export const fetchComplaints = async (city, state, setState, setLoading) => {
                 authorDocRef.onSnapshot((authorDocSnapshot) => {
                   temp.name = authorDocSnapshot.data().name;
                   temp.number = authorDocSnapshot.data().phoneNumber;
-                  data[temp.id] = (temp);
-                  setState((prev) => {
-                    return [...prev, temp];
-                  });
+                  data[temp.id] = temp;
+                  setState(Object.values(data));
                   setLoading(false);
                 });
               });

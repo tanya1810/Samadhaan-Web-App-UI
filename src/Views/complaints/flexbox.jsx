@@ -5,7 +5,7 @@ import { dataarray } from "./dataarray";
 import Feedbackpopup from "./feedbackpopup";
 import { render } from "@testing-library/react";
 import { Route, Link } from "react-router-dom";
-import {changeStatus} from '../../Fire/Complaints'
+import { changeStatus } from "../../Fire/Complaints";
 
 class Flexbox extends React.Component {
   constructor(props) {
@@ -20,10 +20,13 @@ class Flexbox extends React.Component {
     };
   }
 
-  markCompleteHandler = () =>{
-    console.log("Fired")
-    changeStatus(this.props.id, 1)
-  }
+  markCompleteHandler = () => {
+    changeStatus(this.props.id, 1);
+  };
+
+  ignoreHandler = () => {
+    changeStatus(this.props.id, 2);
+  };
 
   handleClick = () => {
     this.setState({
@@ -64,7 +67,9 @@ class Flexbox extends React.Component {
                   ? "pending"
                   : this.props.status == 1
                   ? "solved"
-                  : "ignored"}
+                  : this.props.status == 2
+                  ? "ignored"
+                  : "error"}
               </h5>
               <hr />
             </div>
@@ -77,13 +82,17 @@ class Flexbox extends React.Component {
                 <Link to="/complaints/feedback">
                   <button class="btn btn-outline-secondary">Feedback</button>
                 </Link>
-                <button onClick={this.markCompleteHandler} type="button" class="btn btn-outline-secondary">
+                <button
+                  onClick={this.markCompleteHandler}
+                  type="button"
+                  class="btn btn-outline-secondary"
+                >
                   Mark Complete
                 </button>
                 <button type="button" class="btn btn-outline-secondary">
                   Transfer
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button onClick={this.ignoreHandler} type="button" class="btn btn-outline-secondary">
                   Ignore
                 </button>
               </div>

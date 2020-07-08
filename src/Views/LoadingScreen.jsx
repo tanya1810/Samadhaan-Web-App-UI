@@ -1,5 +1,5 @@
 import React from "react";
-import BounceLoader from "react-spinners/BounceLoader";
+import PulseLoader from "react-spinners/PulseLoader";
 
 const override = `
   display: block;
@@ -9,10 +9,10 @@ const override = `
 
 const LoadingScreen = (props) => {
   return (
-    <div>
-      <BounceLoader
+    <div style={{justifyContent:"center", alignItems:"center"}}>
+      <PulseLoader
         css={override}
-        size={150}
+        size={30}
         color={"#123abc"}
         loading= {true}
       />
