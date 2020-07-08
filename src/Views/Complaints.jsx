@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Complaints.css";
-import { fetchComplaints, testing } from "../Fire/Complaints";
+import { fetchComplaints } from "../Fire/Complaints";
 import Bar from "./complaints/navbar";
 import { useSelector } from "react-redux";
 import FlexboxList from "./complaints/flexboxlist";
