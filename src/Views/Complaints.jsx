@@ -13,21 +13,20 @@ const Complaints = () => {
   const state = useSelector((state) => state.user.user.state);
   const [isPopup, setIsPopup] = useState(false);
   const [dataArray, setDataArray] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   fetchComplaints(city, state, setDataArray, setIsLoading);
-  // }, []);
+  useEffect(() => {
+    fetchComplaints(city, state, setDataArray, setIsLoading);
+  }, []);
 
   return (
     <div>
       {isLoading ? (
-        <h1>Loading</h1>
-       // <LoadingScreen/>
+        <LoadingScreen/>
       ) : (
         <div>
           <Bar />
-          <FlexboxList setIsPopup={setIsPopup} dataarray={dataarray} />
+          <FlexboxList setIsPopup={setIsPopup} dataarray={dataArray} />
           {isPopup ? <Feedback /> : null}
         </div>
       )}

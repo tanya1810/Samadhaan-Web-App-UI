@@ -50,6 +50,14 @@ body {
   .buttons {
     margin-top: 160px;
   }
+  .complaintcard {
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 876px) {
+  .complaintcard {
+    font-size: 20px;
+  }
 }
 
 .id {
@@ -79,4 +87,9 @@ body {
   padding-bottom: 30px;
   height: 100px;
   word-wrap: break-word;
+}
+.modalWrapper > div > div  {
+  width: 484px !important;
+  padding: 24px !important;
+  border-radius: 10px;
 }

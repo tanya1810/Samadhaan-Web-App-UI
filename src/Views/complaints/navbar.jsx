@@ -7,7 +7,10 @@ import { Link } from "react-router-dom";
 const bar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className="navbar navbar-expand-lg navbar-dark bg-dark"
+        style={{ position: "fixed", zIndex: "2", width: "100%" }}
+      >
         <span className="navbar-brand mb-0 h1">
           <h1>
             Sama<span>dhaan</span>
@@ -40,35 +43,94 @@ const bar = () => {
               </a>
               <div
                 className="dropdown-menu"
-                ariaLabelledby="navbarDropdownMenuLink"
+                aria-labelledby="navbarDropdownMenuLink"
               >
+                 
                 <a className="dropdown-item" href="#">
-                  Department-1
+                                    Animal Husbandry                 
                 </a>
+                                
                 <a className="dropdown-item" href="#">
-                  Department-2
+                                    BDPO                 
                 </a>
+                                
                 <a className="dropdown-item" href="#">
-                  Department-3
+                                    Civil Hospital                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    DHBVN(Urban)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    DHBVN(Rural)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Distt. Town planner                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Education(Elementary)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Education(Higher)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Fire Department                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    HVPNL                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Irrigation                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Nagar Parishad                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    PWD                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    PUBLIC HEALTH(Water)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Public health(Sewage)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Public health (Reny Well)                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Social Welfare                 
+                </a>
+                                
+                <a className="dropdown-item" href="#">
+                                    Tehsil                 
                 </a>
               </div>
             </li>
             <li className="nav-item">
               <div>
                 <Link to="/mainmenu">
-                  <a className="nav-link" href="#">
                     <FontAwesomeIcon
                       className="fa fa-home fa-3x"
                       icon={faHome}
                     />
-                  </a>
                 </Link>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
                 <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
-              </a>
             </li>
           </ul>
         </div>

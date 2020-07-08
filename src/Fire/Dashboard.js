@@ -8,11 +8,11 @@ export const fetchDashboardData = async (city, state, setState) => {
 //   const totalComplaints = totalComplaintsQuerySnapshot.size;
   totalComplaintsQuery.onSnapshot(async totalComplaintsQuerySnapshot=>{
       data.total = totalComplaintsQuerySnapshot.size;
-      const solvedComplaintsQuerySnapshot = await totalComplaintsQuerySnapshot.query.where("status", "==", "solved").get();
+      const solvedComplaintsQuerySnapshot = await totalComplaintsQuerySnapshot.query.where("status", "==", 1).get();
       data.solved = solvedComplaintsQuerySnapshot.size
-      const ignoredComplaintsQuerySnapshot = await totalComplaintsQuerySnapshot.query.where("status", "==", "ignored").get();
+      const ignoredComplaintsQuerySnapshot = await totalComplaintsQuerySnapshot.query.where("status", "==", 2).get();
       data.ignored = ignoredComplaintsQuerySnapshot.size;
-      const pendingComplaintsQuerySnapshot = await totalComplaintsQuerySnapshot.query.where("status", "==", "pending").get();
+      const pendingComplaintsQuerySnapshot = await totalComplaintsQuerySnapshot.query.where("status", "==", 0).get();
       data.pending = pendingComplaintsQuerySnapshot.size
       setState(data);
   })

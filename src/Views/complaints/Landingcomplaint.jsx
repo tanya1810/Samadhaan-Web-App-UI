@@ -6,7 +6,13 @@ import Feedbackpopup from "./feedbackpopup";
 const LandingComplaint = (props) => {
   return (
     <Switch>
-      <Route component={Flexbox} exact path="/complaints" />
+      <Route
+        component={() => {
+          return <Flexbox {...props} />;
+        }}
+        exact
+        path="/complaints"
+      />
       <Route component={Feedbackpopup} path="/complaints/feedback" />
     </Switch>
   );

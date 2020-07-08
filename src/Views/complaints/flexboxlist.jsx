@@ -6,61 +6,52 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
 // --------------------------------------------------------
-import Flexbox from "./flexbox";
+import LandingComplaint from "./Landingcomplaint";
 import "./flexboxlist.css";
 import { dataarray } from "./dataarray";
 
-const flexboxlist = (props) => {
-  const array = props.dataarray.map((user, i) => {
+const flexboxlist = ({ dataarray }) => {
+  console.log(dataarray);
+  const array = dataarray.map((user, i) => {
     return (
-      <Flexbox
-        {...props}
-        name={props.dataarray[i].name}
-        department={props.dataarray[i].department}
-        number={props.dataarray[i].number}
-        address={props.dataarray[i].address}
-        id={props.dataarray[i].id}
-        status={props.dataarray[i].status}
+      <LandingComplaint
+        {...dataarray[i]}
       />
     );
   });
   return (
     <div>
-      <div class="container-fluid">
-        <div class="row">
-          <div
-            className="col-3 column3"
-            style={{ position: "fixed", zIndex: "1" }}
-          >
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
             <div className="subpanel" style={{ color: "blue" }}>
               All complaints
             </div>
-            <FontAwesomeIcon className="fa subpanel" icon={faList} />
+            <FontAwesomeIcon className="fa" icon={faList} />
             <br />
             <hr />
             <div className="subpanel" style={{ color: "green" }}>
-              Processing{" "}
+              Processing
             </div>
             <FontAwesomeIcon
-              className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw subpanel"
+              className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw"
               icon={faCog}
             />
             <br />
             <hr />
             <div className="subpanel" style={{ color: "#FFD700" }}>
-              Completed{" "}
+              Completed
             </div>
-            <FontAwesomeIcon className="fa subpanel" icon={faCheck} />
+            <FontAwesomeIcon className="fa" icon={faCheck} />
             <br />
             <hr />
             <div className="subpanel" style={{ color: "red" }}>
-              Ignore{" "}
+              Ignore
             </div>
-            <FontAwesomeIcon className="fa subpanel" icon={faTimes} />
+            <FontAwesomeIcon className="fa" icon={faTimes} />
             <br />
           </div>
-          <div className="topbackground"></div>
-          <div class="col flexlist">{array}</div>
+          <div className="col flexlist">{array}</div>
         </div>
       </div>
     </div>
