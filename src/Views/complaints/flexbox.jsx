@@ -44,7 +44,7 @@ const Flexbox = (props) => {
               <h4>{null}</h4>
             </div>
             <div className="col-sm ">
-              <h4>{props.number}</h4>
+              <h4>{props.phoneNumber}</h4>
             </div>
           </div>
         </div>
