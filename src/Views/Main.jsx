@@ -32,7 +32,7 @@ const Mainpg = () => {
       </div> 
       <div id="hd" className="display-1">
         Sama<span>dhaan</span>
-        <div>City</div>
+        <div>Palwal, Haeyana</div>
       </div>
       <div className="container"> 
       <div id="d" className="row justify-content-center" >

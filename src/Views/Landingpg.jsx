@@ -4,11 +4,14 @@ import {Link} from 'react-router-dom';
 const Landingpg = () => {
     return (
       <div>
-      <nav className="navbar navbar-dark bg-dark">
-    <a className="navbar-brand" href="#">
-     <img src="https://lh3.googleusercontent.com/Jsvb9oenmsRPG1-L2sjEiigWf-jKLzIdxzYxfgS5jzsnizZrJTKeU3Scl3MHXM672-qz=s180-rw" width="30" height="30" className="d-inline-block align-top" alt="" loading="lazy" />
-      Samadhaan
-    </a>
+<nav          className="navbar navbar-expand-lg navbar-dark bg-dark"
+        style={{ position: "fixed", zIndex: "2", width: "100%" }}
+      >
+        <span className="navbar-brand mb-0 h1">
+          <h1>
+            Sama<span>dhaan</span>
+          </h1>
+        </span>
   </nav>
    <div id="im">
     <img src="https://image.freepik.com/free-vector/dad-reading-kids-family-sitting-sofa-with-book_113065-313.jpg" width="250" height="250" />
