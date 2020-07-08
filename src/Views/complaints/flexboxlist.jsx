@@ -11,14 +11,19 @@ import "./flexboxlist.css";
 import { dataarray } from "./dataarray";
 
 const flexboxlist = ({ dataarray }) => {
+  console.log(dataarray);
   const array = dataarray.map((user, i) => {
     return (
       <LandingComplaint
+        complaintText={dataarray[i].complaintText}
         name={dataarray[i].name}
         department={dataarray[i].department}
         number={dataarray[i].number}
         address={dataarray[i].address}
         id={dataarray[i].id}
+        date={dataarray[i].date}
+        status={dataarray[i].status}  
+        imageUrl = {dataarray[i].imageUrl}
       />
     );
   });
