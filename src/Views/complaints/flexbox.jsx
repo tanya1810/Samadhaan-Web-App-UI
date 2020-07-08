@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./flexbox.css";
-import { dataarray } from "./dataarray";
 import Feedbackpopup from "./feedbackpopup";
 import { dataarray } from "./dataarray";
 import { render } from "@testing-library/react";
