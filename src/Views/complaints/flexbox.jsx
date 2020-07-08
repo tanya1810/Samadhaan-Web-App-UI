@@ -20,6 +20,8 @@ class Flexbox extends React.Component {
     };
   }
 
+  date = new Date(this.props.date)
+
   markCompleteHandler = () => {
     changeStatus(this.props.id, 1);
   };
@@ -60,7 +62,7 @@ class Flexbox extends React.Component {
             <div class="col-3 sidecolumn">
               <h5>{this.props.department}</h5>
               <hr />
-              <h5>{this.props.date}</h5>
+              <h5>{`${this.date.getDate()}/${this.date.getMonth()}/${this.date.getFullYear()}`}</h5>
               <hr />
               <h5>
                 {this.props.status == 0
