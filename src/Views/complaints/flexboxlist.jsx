@@ -24,6 +24,7 @@ const flexboxlist = ({ dataarray }) => {
         date={dataarray[i].date}
         status={dataarray[i].status}  
         imageUrl = {dataarray[i].imageUrl}
+        deptFeedback = {dataarray[i].deptFeedback}
       />
     );
   });
