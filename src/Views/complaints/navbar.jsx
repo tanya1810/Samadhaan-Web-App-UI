@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const bar = () => {
   return (
@@ -29,11 +30,11 @@ const bar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item dropdown mr-4">
+            <li className="nav-item dropdown" >
               <a
                 className="nav-link dropdown-toggle h5"
                 href="#"
-                id="navbarDropdownMenuLink"
+                id="navbarDropdownMenu"
                 role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -43,83 +44,83 @@ const bar = () => {
               </a>
               <div
                 className="dropdown-menu"
-                aria-labelledby="navbarDropdownMenuLink"
+                aria-labelledby="navbarDropdownMenu"
               >
                  
                 <a className="dropdown-item" href="#">
-                                    Animal Husbandry                 
+                  Animal Husbandry                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    BDPO                 
+                  BDPO                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Civil Hospital                 
+                  Civil Hospital                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    DHBVN(Urban)                 
+                  DHBVN(Urban)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    DHBVN(Rural)                 
+                  DHBVN(Rural)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Distt. Town planner                 
+                  Distt. Town planner                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Education(Elementary)                 
+                  Education(Elementary)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Education(Higher)                 
+                  Education(Higher)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Fire Department                 
+                  Fire Department                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    HVPNL                 
+                  HVPNL                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Irrigation                 
+                  Irrigation                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Nagar Parishad                 
+                  Nagar Parishad                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    PWD                 
+                  PWD                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    PUBLIC HEALTH(Water)                 
+                  PUBLIC HEALTH(Water)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Public health(Sewage)                 
+                  Public health(Sewage)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Public health (Reny Well)                 
+                  Public health (Reny Well)                 
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Social Welfare                 
+                  Social Welfare
                 </a>
                                 
                 <a className="dropdown-item" href="#">
-                                    Tehsil                 
+                  Tehsil                 
                 </a>
               </div>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mt-2">
               <div>
                 <Link to="/mainmenu">
                     <FontAwesomeIcon
@@ -129,7 +130,7 @@ const bar = () => {
                 </Link>
               </div>
             </li>
-            <li className="nav-item">
+            <li className="nav-item mt-2">
                 <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
             </li>
           </ul>
