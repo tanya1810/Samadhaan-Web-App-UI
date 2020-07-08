@@ -3,7 +3,9 @@ import ReactDOM from "react-dom";
 import "./flexbox.css";
 import { dataarray } from "./dataarray";
 import Feedbackpopup from "./feedbackpopup";
+import { dataarray } from "./dataarray";
 import { render } from "@testing-library/react";
+import Popup from "reactjs-popup";
 import { Route, Link } from "react-router-dom";
 import { changeStatus } from "../../Fire/Complaints";
 
@@ -40,7 +42,7 @@ class Flexbox extends React.Component {
   render() {
     return (
       <div className="complaintcard">
-        <Route component={Feedbackpopup} exact path="/complaints/feedback" />
+          <Route component={Feedbackpopup} exact path="/complaints/feedback" />
         <div className="title">
           <div className="container-fluid">
             <div className="row">
@@ -48,18 +50,18 @@ class Flexbox extends React.Component {
                 <h4>{this.props.name}</h4>
                 <h4 className="id">{this.state.id}</h4>
               </div>
-              <div class="col-sm address">
+              <div className="col-sm address">
                 <h4>{this.state.address}</h4>
               </div>
-              <div class="col-sm ">
+              <div className="col-sm ">
                 <h4>{this.props.number}</h4>
               </div>
             </div>
           </div>
         </div>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-3 sidecolumn">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-3 sidecolumn">
               <h5>{this.props.department}</h5>
               <hr />
               <h5>{`${this.date.getDate()}/${this.date.getMonth()}/${this.date.getFullYear()}`}</h5>
@@ -75,26 +77,54 @@ class Flexbox extends React.Component {
               </h5>
               <hr />
             </div>
-            <div class="col">
+            <div className="col">
               {this.props.imageUrl ? <img src={this.props.imageUrl} /> : null}
               <div className="data">
                 <h6 className="complaint">{this.props.complaintText}</h6>
               </div>
               <div className="buttons">
-                <Link to="/complaints/feedback">
-                  <button class="btn btn-outline-secondary">Feedback</button>
-                </Link>
+                <div className="modalWrapper">
+                <Popup trigger={<button className="btn btn-outline-secondary">Feedback</button>} position="top-center">
+                  <div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                   <div className="modal-content">
+                   <div className="modal-header">      
+                     <h5 className="modal-title" id="staticBackdropLabel">
+                       Submit your Feedback
+                    </h5>
+              <button
+              type="button"
+              className="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              >
+              <span aria-hidden="true">&times;</span>
+              </button>
+             </div>
+               <div className="modal-body">
+                 <input type="text" />
+                 <input type="file" />
+                <button className="btn btn-secondary">Upload</button>
+                 </div>
+                 <div className="modal-footer"> 
+                  <button type="button" className="btn btn-primary">
+                   Submit
+                   </button>
+                  </div>
+                </div>
+                </div>
+               </Popup>
+               </div>                
                 <button
                   onClick={this.markCompleteHandler}
                   type="button"
-                  class="btn btn-outline-secondary"
+                  className="btn btn-outline-secondary"
                 >
                   Mark Complete
                 </button>
-                <button type="button" class="btn btn-outline-secondary">
+                <button type="button" className="btn btn-outline-secondary">
                   Transfer
                 </button>
-                <button onClick={this.ignoreHandler} type="button" class="btn btn-outline-secondary">
+                <button onClick={this.ignoreHandler} type="button" className="btn btn-outline-secondary">
                   Ignore
                 </button>
               </div>

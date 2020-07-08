@@ -43,7 +43,7 @@ const bar = () => {
               </a>
               <div
                 className="dropdown-menu"
-                ariaLabelledby="navbarDropdownMenuLink"
+                aria-labelledby="navbarDropdownMenuLink"
               >
                  
                 <a className="dropdown-item" href="#">
@@ -122,19 +122,15 @@ const bar = () => {
             <li className="nav-item">
               <div>
                 <Link to="/mainmenu">
-                  <a className="nav-link" href="#">
                     <FontAwesomeIcon
                       className="fa fa-home fa-3x"
                       icon={faHome}
                     />
-                  </a>
                 </Link>
               </div>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
                 <FontAwesomeIcon className="fa fa-user fa-3x" icon={faUser} />
-              </a>
             </li>
           </ul>
         </div>

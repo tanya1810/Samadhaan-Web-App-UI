@@ -29,9 +29,9 @@ const flexboxlist = ({ dataarray }) => {
   });
   return (
     <div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
             <div className="subpanel" style={{ color: "blue" }}>
               All complaints
             </div>
@@ -59,7 +59,7 @@ const flexboxlist = ({ dataarray }) => {
             <FontAwesomeIcon className="fa" icon={faTimes} />
             <br />
           </div>
-          <div class="col flexlist">{array}</div>
+          <div className="col flexlist">{array}</div>
         </div>
       </div>
     </div>
