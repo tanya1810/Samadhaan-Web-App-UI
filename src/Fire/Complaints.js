@@ -1,3 +1,4 @@
+// import React from "react";
 import { db, myFirebase } from "../firebase";
 
 export const fetchComplaints = async (city, state, setState, setLoading) => {
@@ -35,7 +36,7 @@ export const fetchComplaints = async (city, state, setState, setLoading) => {
         // temp.deptFeedback = complaintDocSnapshot.data().deptFeedback;
         temp.name = authorDocSnapshot.data().name;
         temp.phoneNumber = authorDocSnapshot.data().phoneNumber;
-        data[temp.id] = {...complaintDocSnapshot.data(), ...temp};
+        data[temp.id] = { ...complaintDocSnapshot.data(), ...temp };
         // console.log("heresdata", JSON.stringify(data));
         setState(Object.values(data));
         setLoading(false);
@@ -98,3 +99,13 @@ export const uploadFeedback = (complaintId, feedbackText) => {
     .doc(complaintId)
     .update({ deptFeedback: feedbackText });
 };
+
+// export const showImage = (imageUrl) => {
+// const show = props.imageUrl ? <img src={props.imageUrl} /> : null;
+// return show;
+//   if (imageUrl) {
+//     return <img src={imageUrl} />;
+//   } else {
+//     return null;
+//   }
+// };

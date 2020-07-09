@@ -13,45 +13,45 @@ import { dataarray } from "./dataarray";
 const flexboxlist = ({ dataarray }) => {
   console.log(dataarray);
   const array = dataarray.map((user, i) => {
-    return (
-      <LandingComplaint
-        {...dataarray[i]}
-      />
-    );
+    return <LandingComplaint {...dataarray[i]} />;
   });
   return (
     <div>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-3 column3" style={{ position: "fixed", zIndex: "1" }}>
-            <div className="subpanel" style={{ color: "blue" }}>
+          <div
+            className="col-3 column3"
+            style={{ position: "fixed", zIndex: "1" }}
+          >
+            <div style={{ color: "blue" }}>
               All complaints
+              <FontAwesomeIcon className="fa" icon={faList} />
+              <br />
             </div>
-            <FontAwesomeIcon className="fa" icon={faList} />
-            <br />
             <hr />
-            <div className="subpanel" style={{ color: "green" }}>
+            <div style={{ color: "green" }}>
               Processing
+              <FontAwesomeIcon
+                className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw"
+                icon={faCog}
+              />
+              <br />
             </div>
-            <FontAwesomeIcon
-              className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw"
-              icon={faCog}
-            />
-            <br />
             <hr />
-            <div className="subpanel" style={{ color: "#FFD700" }}>
+            <div style={{ color: "#FFD700" }}>
               Completed
+              <FontAwesomeIcon className="fa" icon={faCheck} />
+              <br />
             </div>
-            <FontAwesomeIcon className="fa" icon={faCheck} />
-            <br />
             <hr />
-            <div className="subpanel" style={{ color: "red" }}>
+            <div style={{ color: "red" }}>
               Ignore
+              <FontAwesomeIcon className="fa" icon={faTimes} />
+              <br />
             </div>
-            <FontAwesomeIcon className="fa" icon={faTimes} />
-            <br />
           </div>
           <div className="col flexlist">{array}</div>
+          <div className="topbackground"></div>
         </div>
       </div>
     </div>
