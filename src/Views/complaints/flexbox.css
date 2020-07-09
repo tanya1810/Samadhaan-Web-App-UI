@@ -1,6 +1,9 @@
 body {
   background-color: #f5f5f5;
 }
+h4 {
+  font-size: 1.2rem !important;
+}
 
 .complaintcard {
   display: flex;
@@ -8,7 +11,9 @@ body {
   justify-content: center;
   flex-direction: column;
   box-shadow: rgba(74, 74, 74, 0.8);
-  margin: 40px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
   background-color: #f7f4f2;
   border-radius: 5px;
   box-shadow: rgba(74, 74, 74, 0.6) 0px 10px 25px 0px;
@@ -37,33 +42,27 @@ body {
   border-bottom-left-radius: 5px;
   padding-right: 20px;
 }
-.buttons {
-  text-align: center;
-  padding: 30px;
-  margin-top: 30px;
-}
 
 @media only screen and (max-width: 876px) {
   .title {
     z-index: "1";
   }
-  .buttons {
-    margin-top: 160px;
-  }
-  .complaintcard {
-    font-size: 15px;
-  }
 }
 @media only screen and (min-width: 876px) {
-  .complaintcard {
-    font-size: 20px;
-  }
 }
 
 .id {
   display: inline-block;
   text-align: right;
   margin-top: 15px;
+}
+.buttons {
+  text-align: center;
+  padding: 30px;
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 @media only screen and (min-width: 581px) {
@@ -73,10 +72,21 @@ body {
 }
 @media only screen and (max-width: 581px) {
   .complaint {
-    margin-top: 90px;
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
   .sidecolumn {
     display: none;
+  }
+  h4 {
+    font-size: 1rem !important;
+  }
+  .nameandid {
+    display: inline-flex;
+  }
+  .buttons {
+    margin-top: 125px;
+    justify-content: center;
   }
 }
 .complaint {
@@ -88,7 +98,7 @@ body {
   height: 100px;
   word-wrap: break-word;
 }
-.modalWrapper > div > div  {
+.modalWrapper > div > div {
   width: 484px !important;
   padding: 24px !important;
   border-radius: 10px;

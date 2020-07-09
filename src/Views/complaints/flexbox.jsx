@@ -11,7 +11,7 @@ import { changeStatus, uploadFeedback } from "../../Fire/Complaints";
 const Flexbox = (props) => {
   const [feedbackText, setFeedbackText] = useState(props.deptFeedback);
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isImageOpen, setIsImageOpen] = useState(false);
   const date = new Date(props.date);
 
   const markCompleteHandler = () => {
@@ -28,6 +28,10 @@ const Flexbox = (props) => {
 
   const feedbackSubmitHandler = () => {
     uploadFeedback(props.id, feedbackText);
+  };
+
+  const imageButtonHandler = () => {
+    setIsImageOpen((prev) => !prev);
   };
 
   return (
@@ -68,12 +72,30 @@ const Flexbox = (props) => {
             <hr />
           </div>
           <div className="col">
-            {props.imageUrl ? <img src={props.imageUrl} /> : null}
+            {props.imageUrl ? (
+              isImageOpen ? (
+                <img src={props.imageUrl} />
+              ) : null
+            ) : null}
             <div className="data">
               <h6 className="complaint">{props.complaintText}</h6>
-              <h6 className="complaint">Department Feedback:{props.deptFeedback?props.deptFeedback:<span style={{color:"red"}}>No feedback yet!</span>}</h6>
+
+              <h6 className="feedbackstatus6">
+                Department Feedback:
+                {props.deptFeedback ? (
+                  props.deptFeedback
+                ) : (
+                  <span style={{ color: "red" }}>No feedback yet!</span>
+                )}
+              </h6>
             </div>
             <div className="buttons">
+              <button
+                onClick={imageButtonHandler}
+                className="btn btn-outline-secondary"
+              >
+                image
+              </button>
               <div className="modalWrapper">
                 <Popup
                   trigger={
@@ -111,7 +133,11 @@ const Flexbox = (props) => {
                         <button className="btn btn-secondary">Upload</button>
                       </div>
                       <div className="modal-footer">
-                        <button onClick={feedbackSubmitHandler} type="button" className="btn btn-primary">
+                        <button
+                          onClick={feedbackSubmitHandler}
+                          type="button"
+                          className="btn btn-primary"
+                        >
                           Submit
                         </button>
                       </div>
