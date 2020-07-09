@@ -11,7 +11,7 @@ import { changeStatus, uploadFeedback } from "../../Fire/Complaints";
 const Flexbox = (props) => {
   const [feedbackText, setFeedbackText] = useState(props.deptFeedback);
   const [isOpen, setIsOpen] = useState(false);
-
+  const [isImageOpen, setIsImageOpen] = useState(false);
   const date = new Date(props.date);
 
   const markCompleteHandler = () => {
@@ -30,9 +30,9 @@ const Flexbox = (props) => {
     uploadFeedback(props.id, feedbackText);
   };
 
-  // const show = () => {
-  //   showImage(props.imageUrl);
-  // };
+  const imageButtonHandler = () => {
+    setIsImageOpen((prev) => !prev);
+  };
 
   return (
     <div className="complaintcard">
@@ -72,7 +72,11 @@ const Flexbox = (props) => {
             <hr />
           </div>
           <div className="col">
-            {/* {props.imageUrl ? <img src={props.imageUrl} /> : null} */}
+            {props.imageUrl ? (
+              isImageOpen ? (
+                <img src={props.imageUrl} />
+              ) : null
+            ) : null}
             <div className="data">
               <h6 className="complaint">{props.complaintText}</h6>
 
@@ -86,7 +90,12 @@ const Flexbox = (props) => {
               </h6>
             </div>
             <div className="buttons">
-              <button className="btn btn-outline-secondary">image</button>
+              <button
+                onClick={imageButtonHandler}
+                className="btn btn-outline-secondary"
+              >
+                image
+              </button>
               <div className="modalWrapper">
                 <Popup
                   trigger={
