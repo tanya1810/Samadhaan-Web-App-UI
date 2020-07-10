@@ -9,8 +9,9 @@ import { faCog } from "@fortawesome/free-solid-svg-icons";
 import LandingComplaint from "./Landingcomplaint";
 import "./flexboxlist.css";
 import { dataarray } from "./dataarray";
+import { propTypes } from "react-bootstrap/esm/Image";
 
-const flexboxlist = ({ dataarray }) => {
+const flexboxlist = ({ dataarray, setFilter }) => {
   console.log(dataarray);
   const array = dataarray.map((user, i) => {
     return <LandingComplaint {...dataarray[i]} />;
@@ -25,12 +26,14 @@ const flexboxlist = ({ dataarray }) => {
           >
             <div style={{ color: "blue" }}>
               All complaints
+              <button onClick={()=>{setFilter("all")}}>All Complaints</button>
               <FontAwesomeIcon className="fa" icon={faList} />
               <br />
             </div>
             <hr />
             <div style={{ color: "green" }}>
               Processing
+              <button onClick={()=>{setFilter("pending")}}>Pending Complaints</button>
               <FontAwesomeIcon
                 className="fa fa-cog fa-spin fa-pulse fa-3x fa-fw"
                 icon={faCog}
@@ -40,12 +43,14 @@ const flexboxlist = ({ dataarray }) => {
             <hr />
             <div style={{ color: "#FFD700" }}>
               Completed
+              <button onClick={()=>{setFilter("solved")}}>Solved Complaints</button>
               <FontAwesomeIcon className="fa" icon={faCheck} />
               <br />
             </div>
             <hr />
             <div style={{ color: "red" }}>
               Ignore
+              <button onClick={()=>{setFilter("ignored")}}>Ignored Complaints</button>
               <FontAwesomeIcon className="fa" icon={faTimes} />
               <br />
             </div>

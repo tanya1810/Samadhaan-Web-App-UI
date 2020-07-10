@@ -15,6 +15,6 @@ messaging.requestPermission()
   console.log(Token)  
 })
 .catch(function(error) {
-   console.log("error occure");
+   console.log("error occured");
 }
 )
