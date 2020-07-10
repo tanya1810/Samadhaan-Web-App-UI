@@ -32,23 +32,35 @@ const Mainpg = () => {
       </div> 
       <div id="hd" className="display-1">
         Sama<span>dhaan</span>
-        <div>Palwal, Haeyana</div>
+        <div>Palwal, Haryana</div>
       </div>
-      <div className="container"> 
-      <div id="d" className="row justify-content-center" >
-        <div id="dd" className="col-xl-3  col-6 mb-4">
-        <button type="button" className="btn btn-outline-dark btn-lg">
-          <Link to="/dashboard">DASHBOARD</Link>
-        </button>
+      <div className="container">
+        <div id="d" className="row justify-content-center">
+          <div id="dd" className="col-xl-3 col-md-6 col-sm-12 col-12 mt-4">
+            <div className="row no-gutters align-items-center">
+              <div className="col">
+              <Link to="/dashboard">
+                <button type="button" className="button">
+                  DASHBOARD
+                </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div id="pp" className="col-xl-3 col-md-6 col-sm-12 col-12 mt-4">
+            <div className="row no-gutters align-items-center">
+              <div className="col">
+              <Link to="/complaints">
+                <button type="button" className="button">
+                  COMPLAINTS
+                </button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-        <div id="pp" className="col-xl-3 col-6 mb-4">
-        <button type="button"  className="btn btn-outline-dark btn-lg">
-          <Link to="/complaints">COMPLAINTS</Link>
-        </button>
       </div>
-      </div>
-      </div>
-      <div id="lo">
+      {/* <div id="lo">
         <button
           type="button"
           className="btn btn-outline-dark btn-md"
@@ -58,7 +70,7 @@ const Mainpg = () => {
         >
           LOGOUT
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
